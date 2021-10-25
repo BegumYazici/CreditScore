@@ -1,5 +1,18 @@
 # CreditScore
-The ProgressBar developed using MVVM architecture on Kotlin
+The CreditScore developed using MVVM architecture on Kotlin. I've used [this api](https://android-interview.s3.eu-west-2.amazonaws.com/endpoint.json) to fetch credit score
+
+```
+{
+  "accountIDVStatus": "PASS",
+  "creditReportInfo": {
+    "score": 514,
+    "scoreBand": 4,
+    "maxScoreValue": 700,
+    ...
+  }
+}      
+```
+Used `score` and `maxScoreValue` fields shows Credit Score on the UI
 
 ## Libraries Used
 - **Foundation** 🎯
