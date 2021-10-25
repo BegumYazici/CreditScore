@@ -1,4 +1,4 @@
-# ProgressBar
+# CreditScore
 The ProgressBar developed using MVVM architecture on Kotlin
 
 ## Libraries Used
