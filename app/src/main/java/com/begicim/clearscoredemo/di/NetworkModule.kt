@@ -23,7 +23,6 @@ class NetworkModule {
             .addConverterFactory(MoshiConverterFactory.create())
             .addCallAdapterFactory(CoroutineCallAdapterFactory())
             .build()
-
     }
 
     @Provides

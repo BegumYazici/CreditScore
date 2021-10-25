@@ -6,22 +6,26 @@ import com.squareup.moshi.Json
 
 @Keep
 data class CreditModel(
-    @field:Json( name="creditReportInfo")
+    @field:Json(name = "creditReportInfo")
     val creditReportInfo: CreditReport,
-    @field:Json(name="dashboardStatus")
+    @field:Json(name = "dashboardStatus")
     val dashboardStatus: String
 )
 
 @Keep
 data class CreditReport(
-    @field:Json(name="score")
-    val score : Int,
-    @field:Json(name="maxScoreValue")
-    val maxScoreValue : Int,
-    @field:Json(name="scoreBand")
-    val scoreBand : Int
+    @field:Json(name = "score")
+    val score: Int,
+    @field:Json(name = "maxScoreValue")
+    val maxScoreValue: Int,
+    @field:Json(name = "scoreBand")
+    val scoreBand: Int
 )
 
-fun CreditModel.toUIModel() : CreditUIModel{
-    return CreditUIModel(creditReportInfo.score,creditReportInfo.maxScoreValue)
+fun CreditModel.toUIModel(): CreditUIModel {
+    return CreditUIModel(
+        creditReportInfo.score,
+        creditReportInfo.maxScoreValue,
+        (creditReportInfo.score * 100) / creditReportInfo.maxScoreValue
+    )
 }

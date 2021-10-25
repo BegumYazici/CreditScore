@@ -10,6 +10,7 @@ import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.test.TestCoroutineDispatcher
 import kotlinx.coroutines.test.runBlockingTest
 import org.junit.Assert
+import org.junit.Assert.assertEquals
 import org.junit.Rule
 import org.junit.Test
 import org.mockito.BDDMockito.given
@@ -41,9 +42,8 @@ class CreditViewModelTest {
 
         creditViewModel.loadCreditScore()
 
-        Assert.assertEquals(ApiStatus.SUCCESS, creditViewModel.apiStatus.value)
+        assertEquals(ApiStatus.SUCCESS, creditViewModel.apiStatus.value)
     }
-
 
     @Test
     fun `when loadCreditScore() is called api service should be error`() {
@@ -51,7 +51,7 @@ class CreditViewModelTest {
 
         creditViewModel.loadCreditScore()
 
-        Assert.assertEquals(ApiStatus.ERROR, creditViewModel.apiStatus.value)
+        assertEquals(ApiStatus.ERROR, creditViewModel.apiStatus.value)
     }
 
     @Test
@@ -64,6 +64,6 @@ class CreditViewModelTest {
 
         val expectedValue = (dummyServiceResponse.creditReportInfo.score * 100) / (dummyServiceResponse.creditReportInfo.maxScoreValue)
 
-        Assert.assertEquals(expectedValue, creditViewModel.progress.value)
+        assertEquals(expectedValue, creditViewModel.creditScore.value?.progressValue)
     }
 }

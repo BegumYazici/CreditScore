@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.begicim.clearscoredemo.R
 import com.begicim.clearscoredemo.databinding.FragmentCreditBinding
 import com.begicim.clearscoredemo.util.NetworkStatusUtil
 import dagger.hilt.android.AndroidEntryPoint
@@ -43,13 +44,10 @@ class CreditFragment : Fragment(){
             bindingAdapters.bindApiStatusImage(binding.creditScoreViewGroup,binding.loadingStatusViewGroup,binding.statusImage, it)
         })
 
-        creditViewModel.progress.observe(viewLifecycleOwner,{
-            binding.progressBar.progress = it
-        })
-
         creditViewModel.creditScore.observe(viewLifecycleOwner, { creditModel ->
+            binding.progressBar.progress = creditModel.progressValue
             binding.textViewCreditScore.text = creditModel.creditScore.toString()
-            binding.textViewMaxScore.text = "out of ${creditModel.creditMaxValueScore}"
+            binding.textViewMaxScore.text = getString(R.string.max_credit_score_placeholder , creditModel.creditMaxValueScore)
         })
     }
 

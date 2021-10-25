@@ -19,7 +19,7 @@ enum class ApiStatus {
 @HiltViewModel
 class CreditViewModel @Inject constructor(
     private val creditApiService: CreditApiService,
-    private val coroutineDispatcher: CoroutineDispatcher
+    coroutineDispatcher: CoroutineDispatcher
 ) : ViewModel() {
 
     private val _creditScore = MutableLiveData<CreditUIModel>()
@@ -27,9 +27,6 @@ class CreditViewModel @Inject constructor(
 
     private val _apiStatus = MutableLiveData<ApiStatus>()
     val apiStatus: LiveData<ApiStatus> = _apiStatus
-
-    private val _progress = MutableLiveData<Int>()
-    val progress: LiveData<Int> = _progress
 
     private val job = Job()
     private val coroutineScope = CoroutineScope(coroutineDispatcher + job)
@@ -46,9 +43,6 @@ class CreditViewModel @Inject constructor(
 
                 val creditInfo = networkResponse.await()
                 _creditScore.value = creditInfo.toUIModel()
-
-                _progress.value =
-                    (creditInfo.toUIModel().creditScore * 100) / creditInfo.toUIModel().creditMaxValueScore
 
                 _apiStatus.value = ApiStatus.SUCCESS
 
