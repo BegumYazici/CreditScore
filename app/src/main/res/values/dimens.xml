@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="status_image_width">190dp</dimen>
+    <dimen name="status_image_height">190dp</dimen>
+    <dimen name="progress_bar_width">300dp</dimen>
+    <dimen name="progress_bar_height">300dp</dimen>
+    <dimen name="loading_information_text_size">18sp</dimen>
+    <dimen name="credit_score_text_size">38sp</dimen>
+    <dimen name="credit_max_score_text_size">16sp</dimen>
+    <dimen name="progress_text_size">16sp</dimen>
+</resources>

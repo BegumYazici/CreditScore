@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ClearScoreDemo</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="your_credit_score_is">Your credit score is</string>
+    <string name="loading_your_credit_score">Loading your credit score...</string>
+</resources>
