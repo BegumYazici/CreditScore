@@ -41,8 +41,8 @@ I've tested these cases in my project;
 
 
 ## Screenshots 📸
-<img align="left" src="./art/success_state_screen.png" width="300" height="500">
+<img align="left" src="./art/success_state_screen.png" width="300" height="700">
 <p align="center">
-<img src="./art/loading_state_screen.png" width="300" height="500">
+<img src="./art/loading_state_screen.png" width="300" height="700">
 </p>
-<img align="left" src="./art/error_state_screen.png" width="300" height="500">
+<img align="left" src="./art/error_state_screen.png" width="300" height="700">
